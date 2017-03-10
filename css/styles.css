@@ -1,0 +1,110 @@
+  body {
+   background-size:cover;
+   background-image:url('../images/water.png'); 
+  }
+
+.article__container {
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+}
+
+.article__block {
+  width:100%;
+  height:50vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.article__block--content {
+  color:#fff;
+}
+
+.article__image {
+  max-width:100%;
+  max-height:100%;
+  height:auto;
+  width:initial;
+}
+
+/*
+* card
+*/
+
+.card__container {
+  background-color:#fff;
+  color:#000;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,1);
+  padding:.75rem;
+}
+
+/*.card__title {
+  font-size:22px;
+  font-weight:800;
+  padding-bottom:10px;
+}*/
+
+.card__title {
+  text-decoration:underline;
+  padding-bottom:5px;
+}
+
+/*
+* fullscreen video
+*/
+
+
+.video__container--fullscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+}
+
+.video__element {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+@media (min-aspect-ratio: 16/9) {
+  .video__element {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video__element {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (min-width: 700px) {
+  body {
+    background-image:none;
+   /*background-size:cover;*/
+   /*background-image:url('images/water.png'); */
+  }
+  .video__element {
+    display:block;
+  }
+  .article__container {
+    flex-direction:row;
+    flex-wrap:nowrap;
+  }
+  .article__block {
+    width:50%;
+    height:100vh;
+  }
+}
