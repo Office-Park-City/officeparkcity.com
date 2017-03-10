@@ -29,6 +29,37 @@
   width:initial;
 }
 
+.article__image-hover {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.article__image--init {
+  position:relative;
+  z-index:10;
+}
+
+.article__image-hover:hover .article__image--init {
+  display:none;
+}
+
+.article__image-hover:hover .article__image--hover {
+  display:block;
+}
+
+.article__image--hover {
+  display:none;
+}
+
+.article__links {
+  position:absolute;
+}
+
+.article__link:hover {
+  text-decoration:underline;
+}
+
 /*
 * card
 */

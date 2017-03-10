@@ -1,0 +1,78 @@
+@keyframes shapeShift {
+    0%   {opacity:0; clip-path: polygon(5% 5%, 100% 0%, 90% 60%, 40% 90%, 0% 60%);}
+    5%   {opacity:1; clip-path: polygon(5% 10%, 90% 0%, 95% 50%, 45% 80%, 10% 60%);}
+    10%   {opacity:0; clip-path: polygon(5% 5%, 100% 0%, 90% 60%, 40% 90%, 0% 60%);}
+    100%   {opacity:0; clip-path: polygon(5% 5%, 100% 0%, 90% 60%, 40% 90%, 0% 60%);}
+}
+
+.shape {
+  display:inline-block;
+  /*min-width:90vw;*/
+  /*min-height:100vh;*/
+  background-color:red;
+  opacity:0;
+  clip-path: polygon(5% 5%, 100% 0%, 90% 60%, 40% 90%, 0% 60%);
+  transition:clip-path 1s, opacity 1s;;
+  animation-name: shapeShift;
+  animation-iteration-count:infinite;
+  animation-duration: 10s;
+}
+
+/*.shape:hover {
+  opacity:1; 
+  clip-path: polygon(5% 10%, 90% 0%, 95% 50%, 45% 80%, 10% 60%);
+}*/
+
+main {
+  background-image:url('../images/grass-texture.gif');
+  padding:1rem;
+}
+
+h2 {
+  font-size:28px;
+  padding: .5rem 0 1rem;
+  /*background-color:red;*/
+}
+
+.text {
+  /*min-width:100%;*/
+  /*min-height:100%;*/
+  color:#fff;
+  padding:1rem;
+  margin:1rem;
+  border:2px solid white;
+}
+
+.key__container, .key__header {
+  background-color:rgba(255,255,200,.6);
+}
+
+.key__header {
+  padding:1rem;
+  color:blue;
+  /*background-color:red;*/
+}
+
+.key__list-item {
+  display:inline-block;
+  margin:1rem;
+  padding:.4rem;
+  background-color:blue;
+}
+
+.property-list__container {
+  padding-top: 1rem;
+  background-color:rgba(255,255,200,.6);
+  padding-left:1rem;
+}
+
+ .property-list__item {
+   display:block;
+   padding: 1rem 0;
+   color:#fff;
+     text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+ }

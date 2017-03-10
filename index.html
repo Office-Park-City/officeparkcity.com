@@ -8,11 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/home.css">
     </head>
     <body>
       <div class="video__container--fullscreen">
-        <video class="video__element" loop autoplay>
+        <video id="ocean-video" class="video__element" autoplay>
           <source src="videos/water.mp4" type="video/mp4">
         </video>
       </div>
@@ -25,7 +26,13 @@
           </header>
         </article>
         <article class="article__block article__block--image">
-          <img class="article__image" src="images/boat-cutout.png" />
+          <div class="article__image-hover">
+            <img class="article__image article__image--init" src="images/boat-cutout.png" />
+            <img class="article__image article__image--hover" src="images/boat-cutout-hover.png" />
+            <ul class="article__links">
+              <a class="article__link" href="prospects.html"><li>prospects</li></a>
+            </ul>
+          </div>
         </article>
       </main>
         <script src="js/scripts.js"></script>
