@@ -1,9 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
 
 const Cart = ({ cart }) => {
 
 	return (
-		<div>cart</div>
+		<div className="cart">cart</div>
 	)
 }
 

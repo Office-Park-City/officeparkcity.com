@@ -1,0 +1,15 @@
+.checkout {
+	width:300px;
+	height:100vh;
+	background-color:#fff;
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:10;
+	transform: translateX(0);
+	transition: transform .2s;
+
+	&--inactive {
+		transform: translateX(-300px);
+	}
+}
