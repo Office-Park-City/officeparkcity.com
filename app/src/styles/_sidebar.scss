@@ -5,8 +5,10 @@
 	position:absolute;
 	top:0;
 	right:0;
-	transform: translateX(0);
-	transition: transform .2s;
+	transform: translateX(2px);
+	transition: transform .3s;
+	border-right:2px solid lightgray;
+	box-sizing:content-box;
 
 	&--inactive {
 		transform: translateX(-300px);
@@ -14,8 +16,9 @@
 
 	&--cart {
 		z-index:20;
-		background-color:#000;
-		color:#fff;
+		// background-color:#000;
+		// background-color:#f7f7f7;
+		// color:#fff;
 	}
 
 	&--checkout {
@@ -32,7 +35,7 @@
 	    border-bottom: 2px solid black;
 	    padding:10px 5px;
 
-	    &--dark {border-bottom: 2px solid white;}
+	    // &--dark {border-bottom: 2px solid white;}
 	}
 
 	&__item {}
@@ -49,6 +52,6 @@
 		display:flex;
 		align-items: center;
 
-		&--dark {border-top: 2px solid white;}
+		// &--dark {border-top: 2px solid white;}
 	}
 }

@@ -18,7 +18,7 @@ const Main = ({pathname, history}) => {
 
   return (
   	<main onClick={() => handleClick()} className={mainClasses}>
-  		Main Content
+  		www.officeparkcity.com
   		<div className="options__container">
   			<Link to='/cart' className={cartOptionClasses}>cart</Link>
   		</div>
