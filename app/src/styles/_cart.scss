@@ -39,7 +39,13 @@
 		&-quantity-container {
 			display: flex;
     		justify-content: space-between;
+    		align-items:center;
     		padding-top:4px;
+    		color:#ccc;
+		}
+
+		&-quantity-value {
+			font-size:12px;
 		}
 
 		&-price {
@@ -55,6 +61,7 @@
 		&-delete {
 			font-size: 12px;
     		font-weight: 100;
+    		color:#ccc;
 		}
 	}
 }

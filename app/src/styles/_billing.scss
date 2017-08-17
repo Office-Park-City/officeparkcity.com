@@ -1,0 +1,39 @@
+.billing {
+
+	&__container {
+		padding:20px;
+	}
+
+	&__fieldset {
+		margin: 20px 0;
+		border-bottom: 1px solid #000;
+	}
+
+	&__input {
+		width:100%;
+	    padding: 7px;
+	    font-size: 12px;
+	    background-size:16px;
+	    background-repeat:no-repeat;
+    	border: 1px solid #000;
+	    background-position-y: center;
+	    background-position-x: 4px;
+
+	    &::placeholder {
+	    	padding-left:20px;
+	    }
+
+		&--margin {
+			margin-bottom:10px;
+		}
+
+		&--half {
+			width:50%;
+			border-bottom:0px;
+			border-top:0px;
+			&:nth-child(3) {
+				border-left:0px;
+			}
+		}
+	}
+}

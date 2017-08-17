@@ -184,7 +184,11 @@ html {
   .cart-list__item-quantity-container {
     display: flex;
     justify-content: space-between;
-    padding-top: 4px; }
+    align-items: center;
+    padding-top: 4px;
+    color: #ccc; }
+  .cart-list__item-quantity-value {
+    font-size: 12px; }
   .cart-list__item-price {
     height: 40px;
     width: 40px;
@@ -195,7 +199,8 @@ html {
     border-left: 1px solid white; }
   .cart-list__item-delete {
     font-size: 12px;
-    font-weight: 100; }
+    font-weight: 100;
+    color: #ccc; }
 
 .cart-total__container {
   display: flex;
@@ -209,3 +214,30 @@ html {
   align-self: flex-end;
   padding: 0 5px;
   font-size: 12px; }
+
+.billing__container {
+  padding: 20px; }
+
+.billing__fieldset {
+  margin: 20px 0;
+  border-bottom: 1px solid #000; }
+
+.billing__input {
+  width: 100%;
+  padding: 7px;
+  font-size: 12px;
+  background-size: 16px;
+  background-repeat: no-repeat;
+  border: 1px solid #000;
+  background-position-y: center;
+  background-position-x: 4px; }
+  .billing__input::placeholder {
+    padding-left: 20px; }
+  .billing__input--margin {
+    margin-bottom: 10px; }
+  .billing__input--half {
+    width: 50%;
+    border-bottom: 0px;
+    border-top: 0px; }
+    .billing__input--half:nth-child(3) {
+      border-left: 0px; }
