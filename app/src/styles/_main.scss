@@ -1,6 +1,5 @@
 .main {
-	background-color:#efefef;
-	color:white;
+	background-color:#fefefe;
 	position:relative;
 	width:100vw;
 	min-height:100vh;
@@ -24,7 +23,7 @@
 		transform: translateX(-300px);
 
 		&:after {
-			opacity:.2;
+			opacity:.08;
 		}
 	}
 }

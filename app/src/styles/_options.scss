@@ -1,0 +1,19 @@
+.options {
+	&__container {
+		position:absolute;
+		top: 0;
+		right:0;
+		padding:10px;
+		z-index:10;
+		display:flex;
+	}
+
+	&__item {
+		opacity:1;
+		transition: opacity .2s;
+
+		&--inactive {
+			opacity:.1;
+		}
+	}
+}
