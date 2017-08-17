@@ -215,8 +215,14 @@ html {
   padding: 0 5px;
   font-size: 12px; }
 
+.cart-total--billing {
+  padding-right: 20px; }
+
 .billing__container {
-  padding: 20px; }
+  padding: 20px;
+  font-size: 12px;
+  font-weight: 100;
+  font-family: sans-serif; }
 
 .billing__fieldset {
   margin: 20px 0;
@@ -230,9 +236,8 @@ html {
   background-repeat: no-repeat;
   border: 1px solid #000;
   background-position-y: center;
-  background-position-x: 4px; }
-  .billing__input::placeholder {
-    padding-left: 20px; }
+  background-position-x: 4px;
+  padding-left: 30px; }
   .billing__input--margin {
     margin-bottom: 10px; }
   .billing__input--half {
@@ -241,3 +246,19 @@ html {
     border-top: 0px; }
     .billing__input--half:nth-child(3) {
       border-left: 0px; }
+  .billing__input--thirds {
+    display: flex; }
+  .billing__input--third {
+    border-bottom: 0px;
+    border-top: 0px;
+    flex: 1; }
+    .billing__input--third:nth-child(2), .billing__input--third:nth-child(3) {
+      border-left: 0px; }
+    .billing__input--third:first-child {
+      flex: 3; }
+    .billing__input--third:nth-child(3) {
+      flex: 2; }
+  .billing__input--newsletter-label {
+    color: #555; }
+  .billing__input--city, .billing__input--state, .billing__input--zip {
+    padding-left: 10px; }
