@@ -15,7 +15,7 @@ const Cart = ({ pathname }) => {
 		<div className={cartClasses}>
 			<header className="sidebar-header__container sidebar-header__container--dark">
 				<div className="sidebar-header__item">cart</div>
-				<Link to="/" className="sidebar-header__item">close</Link>
+				<Link to="/" className="sidebar-header__item sidebar-header__item--close">close</Link>
 			</header>
 			<ul className="cart-list__container">
 				<CartItem />
