@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
+import Products from '../Products/ProductsContainer';
 
 const Main = ({pathname, history}) => {
 
@@ -22,6 +23,12 @@ const Main = ({pathname, history}) => {
   		<div className="options__container">
   			<Link to='/cart' className={cartOptionClasses}>cart</Link>
   		</div>
+
+  		<br/>
+  		<br/>
+  		<br/>
+
+  		 <Products/>
   	</main>
   )
 }
