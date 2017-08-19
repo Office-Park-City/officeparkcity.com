@@ -1,4 +1,5 @@
-var stripe = require('stripe')('sk_test_bDlTYJ5AVwkzZHH7pLCPRILw');
+const STRIPE_API_KEY = require('../config').STRIPE_API_KEY;
+var stripe = require('stripe')(STRIPE_API_KEY);
 
 module.exports = {
 

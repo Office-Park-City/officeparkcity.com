@@ -1,6 +1,5 @@
 const express = require('express');
 const checkoutRouter = express.Router();
-const stripe = require('stripe')("sk_test_bDlTYJ5AVwkzZHH7pLCPRILw");
 const chargeCard = require('../helpers/stripe-helper').chargeCard;
 const emailHelper = require('../helpers/email-helper');
 

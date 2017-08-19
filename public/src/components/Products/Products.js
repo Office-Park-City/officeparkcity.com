@@ -1,13 +1,14 @@
 import React from 'react';
 import classNames from 'classnames';
 import products from '../../settings/products';
+import Product from './Product';
 
-const Products = () => {
+const Products = ({ addToCart }) => {
 
-	const productList = products.map(product => <li key={product.slug}>{product.name} | {product.price}<br/><img style={{objectFit:'cover', width:200, height:200}} src={product.images[0]}/></li>)
+	const productList = products.map(product => <Product key={product.slug} product={product} addToCart={addToCart}/>)
 
   return (
-		<ul style={{display:'flex'}}>
+		<ul style={{display:'flex', zIndex:1000, justifyContent:'space-around'}}>
 			{productList}
 		</ul>
   )

@@ -3,13 +3,15 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 
-const Cart = ({ pathname }) => {
+const Cart = ({ pathname, cart }) => {
 
 	const cartClasses = classNames({
 		sidebar: true,
 		'sidebar--cart': true,
 		'sidebar--inactive': pathname == '/checkout',
 	})
+
+	const cartItemList = cart.map(item => <CartItem key={item.product.slug} item={item} />)
 
 	return (
 		<div className={cartClasses}>
@@ -18,9 +20,7 @@ const Cart = ({ pathname }) => {
 				<Link to="/" className="sidebar-header__item sidebar-header__item--close">close</Link>
 			</header>
 			<ul className="cart-list__container">
-				<CartItem />
-				<CartItem />
-				<CartItem />
+				{cartItemList}
 			</ul>
 			<div className="cart-total__container">
 				<div className="cart-total__amount">$79</div>

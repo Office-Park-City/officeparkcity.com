@@ -1,3 +1,4 @@
+const MAILGUN_API_KEY = require('../config').MAILGUN_API_KEY;
 const mailgun = require('mailgun-js')({apiKey:'key-a61b6ad2a2889c476cd289df3f422209', domain:'officeparkcity.com'});
 const mailcomposer = require('mailcomposer');
 

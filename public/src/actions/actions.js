@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 export const TOGGLE_SETTING = 'TOGGLE_SETTING'
-export const ADD_PRODUCT_TO_CART = 'ADD_PRODUCT_TO_CART'
+export const ADD_TO_CART = 'ADD_TO_CART'
 export const INCREMENT_PRODUCT = 'INCREMENT_PRODUCT'
 export const DECREMENT_PRODUCT = 'DECREMENT_PRODUCT'
 export const DELETE_PRODUCT = 'DELETE_PRODUCT'
@@ -14,13 +14,12 @@ export function toggleSetting() {
     }
 }
 
-export function addProductToCart(product, quantity = 1) {
+export function addToCart(product, quantity = 1) {
 
 	const { slug } = product;
 
 	return {
-		type: ADD_PRODUCT_TO_CART,
-		slug,
+		type: ADD_TO_CART,
 		product,
 		quantity
 	}
