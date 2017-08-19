@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const CartItem = ({ item }) => {
+const CartItem = ({ item, deleteProduct }) => {
 
 	const { product, quantity } = item;
 
@@ -12,7 +12,7 @@ const CartItem = ({ item }) => {
 			</div>
 			<div className="cart-list__item-info">
 				<div className="cart-list__item-title">{product.name}</div>
-				<div className="cart-list__item-delete">delete</div>
+				<div onClick={() => deleteProduct(product.slug)} className="cart-list__item-delete">delete</div>
 			</div>
 			<div className="cart-list__item-numbers">
 				<div className="cart-list__item-quantity-container">

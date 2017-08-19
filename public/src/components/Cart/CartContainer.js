@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleSetting } from '../../actions/actions';
+import { toggleSetting, deleteProduct } from '../../actions/actions';
 import Cart from './Cart';
 
 const mapStateToProps = (state) => {
@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    toggleSetting: () => {
-      dispatch(toggleSetting());
+    deleteProduct: (slug) => {
+      dispatch(deleteProduct(slug));
     },
   };
 };
