@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const path = require('path');
 const checkoutRoutes = require('./routes/checkout');
+const mailRoutes = require('./routes/mail');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/checkout', checkoutRoutes);
+app.use('/mail', mailRoutes);
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname + '/public/build/index.html'));
