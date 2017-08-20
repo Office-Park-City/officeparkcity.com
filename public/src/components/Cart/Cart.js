@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
 
-const Cart = ({ pathname, cart, deleteProduct }) => {
+const Cart = ({ pathname, cart, deleteProduct, incrementProduct, decrementProduct}) => {
 
 	const cartClasses = classNames({
 		sidebar: true,
@@ -11,7 +11,7 @@ const Cart = ({ pathname, cart, deleteProduct }) => {
 		'sidebar--inactive': pathname == '/checkout',
 	})
 
-	const cartItemList = cart.map(item => <CartItem key={item.product.slug} deleteProduct={deleteProduct} item={item} />)
+	const cartItemList = cart.map(item => <CartItem key={item.product.slug} deleteProduct={deleteProduct} incrementProduct={incrementProduct} decrementProduct={decrementProduct} item={item} />)
 
 	return (
 		<div className={cartClasses}>

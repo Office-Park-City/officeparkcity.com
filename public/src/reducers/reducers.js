@@ -4,6 +4,8 @@ import {
     TOGGLE_SETTING,
     ADD_TO_CART,
     DELETE_PRODUCT,
+    INCREMENT_PRODUCT,
+    DECREMENT_PRODUCT
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
@@ -52,6 +54,36 @@ const rootReducer = (state = initialState, action) => {
                     quantity: action.quantity
                 }]
 	        });
+
+        case INCREMENT_PRODUCT:
+
+            const incItemIndex = state.cart.findIndex( item => item.product.slug === action.slug );
+
+            return Object.assign({}, state, {
+                cart: [
+                    ...state.cart.slice(0, incItemIndex),
+                    {
+                        product: state.cart[incItemIndex].product,
+                        quantity: state.cart[incItemIndex].quantity + 1
+                    },
+                    ...state.cart.slice(incItemIndex + 1)
+                ]
+            });
+
+        case DECREMENT_PRODUCT:
+
+            const decItemIndex = state.cart.findIndex( item => item.product.slug === action.slug );
+
+            return Object.assign({}, state, {
+                cart: [
+                    ...state.cart.slice(0, decItemIndex),
+                    {
+                        product: state.cart[decItemIndex].product,
+                        quantity: state.cart[decItemIndex].quantity - 1
+                    },
+                    ...state.cart.slice(decItemIndex + 1)
+                ]
+            });
 
         default:
             return state;

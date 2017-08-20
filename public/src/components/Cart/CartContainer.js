@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { toggleSetting, deleteProduct } from '../../actions/actions';
+import { toggleSetting, deleteProduct, decrementProduct, incrementProduct } from '../../actions/actions';
 import Cart from './Cart';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,13 @@ const mapDispatchToProps = (dispatch) => {
     deleteProduct: (slug) => {
       dispatch(deleteProduct(slug));
     },
+    decrementProduct: (slug) => {
+      dispatch(decrementProduct(slug));
+    },
+    incrementProduct: (slug) => {
+      dispatch(incrementProduct(slug));
+    },
+
   };
 };
 

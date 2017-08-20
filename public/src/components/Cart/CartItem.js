@@ -1,7 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
+import CartQuantity from './CartQuantity';
 
-const CartItem = ({ item, deleteProduct }) => {
+const CartItem = ({ item, deleteProduct, incrementProduct, decrementProduct }) => {
 
 	const { product, quantity } = item;
 
@@ -15,11 +16,7 @@ const CartItem = ({ item, deleteProduct }) => {
 				<div onClick={() => deleteProduct(product.slug)} className="cart-list__item-delete">delete</div>
 			</div>
 			<div className="cart-list__item-numbers">
-				<div className="cart-list__item-quantity-container">
-					<div className="cart-list__item-quantity-inc">-</div>
-					<div className="cart-list__item-quantity-value">{quantity}</div>
-					<div className="cart-list__item-quantity-dec">+</div>
-				</div>
+				<CartQuantity slug={product.slug} quantity={item.quantity} incrementProduct={incrementProduct} decrementProduct={decrementProduct} />
 				<div className="cart-list__item-price">${((product.price / 100) * quantity ).toLocaleString('en', {currency: 'usd'})}</div>
 			</div>
 		</li>
