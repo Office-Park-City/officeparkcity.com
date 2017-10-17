@@ -199,7 +199,8 @@ html {
     font-size: 12px; }
   .cart-list__item-quantity-inc, .cart-list__item-quantity-dec {
     opacity: 1;
-    pointer-events: all; }
+    pointer-events: all;
+    cursor: pointer; }
     .cart-list__item-quantity-inc--inactive, .cart-list__item-quantity-dec--inactive {
       opacity: 0;
       pointer-events: none; }
@@ -214,7 +215,8 @@ html {
   .cart-list__item-delete {
     font-size: 12px;
     font-weight: 100;
-    color: #555; }
+    color: #555;
+    cursor: pointer; }
 
 .cart-total__container {
   display: flex;

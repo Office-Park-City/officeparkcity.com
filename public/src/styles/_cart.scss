@@ -54,6 +54,7 @@
 
 			opacity:1;
 			pointer-events:all;
+			cursor:pointer;
 
 			&--inactive {
 				opacity:0;
@@ -76,6 +77,7 @@
     		font-weight: 100;
     		// color:#ccc;
     		color:#555;
+    		cursor:pointer;
 		}
 	}
 }

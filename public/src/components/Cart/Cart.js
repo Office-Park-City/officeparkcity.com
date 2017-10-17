@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
+import CartTotal from './CartTotal';
 
 const Cart = ({ pathname, cart, deleteProduct, incrementProduct, decrementProduct}) => {
 
@@ -22,10 +23,7 @@ const Cart = ({ pathname, cart, deleteProduct, incrementProduct, decrementProduc
 			<ul className="cart-list__container">
 				{cartItemList}
 			</ul>
-			<div className="cart-total__container">
-				<div className="cart-total__amount">$79</div>
-				<div className="cart-total__subscript">total</div>
-			</div>
+			<CartTotal cart={cart} />
 			<Link to='/checkout' className="sidebar-footer__container sidebar-footer__container--dark">
 				<div className="sidebar-footer__text">checkout</div>
 			</Link>
