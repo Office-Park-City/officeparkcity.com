@@ -4,6 +4,10 @@
 		display:flex;
 	}
 
+	&__title {
+		z-index:10;
+	}
+
 	&__primary {
 		display: flex;
 	    position: absolute;

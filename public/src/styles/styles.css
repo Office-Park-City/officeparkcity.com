@@ -283,6 +283,9 @@ html {
 .nav__container {
   display: flex; }
 
+.nav__title {
+  z-index: 10; }
+
 .nav__primary {
   display: flex;
   position: absolute;
