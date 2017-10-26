@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import App from './components/App/AppContainer';
 import { configureStore } from './store';
-import initialDispatch from './initialDispatch';
+import historyListener from './historyListener';
 import registerServiceWorker from './registerServiceWorker';
 import './styles/styles.css';
 
@@ -13,13 +13,13 @@ const store = configureStore();
 const mountApp = document.getElementById('root');
 
 // Initial AJAX requests
-initialDispatch(store);
+const history = historyListener(store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
+    <Router history={history}>
       <Route path="/" component={App} />
-    </BrowserRouter>
+    </Router>
   </Provider>,
   mountApp
 );

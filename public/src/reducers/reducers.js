@@ -5,11 +5,17 @@ import {
     ADD_TO_CART,
     DELETE_PRODUCT,
     INCREMENT_PRODUCT,
-    DECREMENT_PRODUCT
+    DECREMENT_PRODUCT,
+    PRE_COMMERCE_ROUTE
 } from '../actions/actions';
 
 const rootReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        case PRE_COMMERCE_ROUTE:
+            return Object.assign({}, state, {
+                preCommerceRoute: action.location
+            });
 
         case TOGGLE_SETTING:
             return Object.assign({}, state, {

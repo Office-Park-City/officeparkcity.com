@@ -5,12 +5,20 @@ export const ADD_TO_CART = 'ADD_TO_CART'
 export const INCREMENT_PRODUCT = 'INCREMENT_PRODUCT'
 export const DECREMENT_PRODUCT = 'DECREMENT_PRODUCT'
 export const DELETE_PRODUCT = 'DELETE_PRODUCT'
+export const PRE_COMMERCE_ROUTE = 'PRE_COMMERCE_ROUTE'
 
 // const baseUrl = process.env.NODE_ENV !== 'production' ? `http://localhost:8000/api-2017` : '/api-2017';
 
 export function toggleSetting() {
     return {
         type: TOGGLE_SETTING,
+    }
+}
+
+export function preCommerceRoute(location) {
+    return {
+        type: PRE_COMMERCE_ROUTE,
+        location
     }
 }
 

@@ -8,7 +8,7 @@ import Misc from '../Misc/MiscContainer';
 import Home from '../Home/HomeContainer';
 import Contact from '../Contact/ContactContainer';
 
-const Main = ({pathname, history}) => {
+const Main = ({pathname, history, preCommerceRoute}) => {
 
 	const mainClasses = classNames({
 		main: true,
@@ -20,7 +20,15 @@ const Main = ({pathname, history}) => {
 		'options__item--inactive': ['/cart', '/checkout'].includes(pathname)
 	})
 
-	const handleClick = () => { ['/cart', '/checkout'].includes(pathname) ? history.push('/') : null}
+	const handleClick = () => { ['/cart', '/checkout'].includes(pathname) ? history.push(preCommerceRoute) : null}
+
+  const routeComponent = {
+    '/about': <About/>,
+    '/products': <Products/>,
+    '/misc': <Misc/>,
+    '/contact': <Contact/>,
+    '/': <Home/>
+  }
 
   return (
   	<main onClick={() => handleClick()} className={mainClasses}>
@@ -38,6 +46,7 @@ const Main = ({pathname, history}) => {
       <Route path="/products" component={Products}/>
       <Route path="/contact" component={Contact}/>
       <Route path="/misc" component={Misc}/>
+      <Route path="/cart" render={() => routeComponent[preCommerceRoute]}/>
   	</main>
   )
 }

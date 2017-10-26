@@ -5,6 +5,7 @@ import Main from './Main';
 const mapStateToProps = (state) => {
   return {
     cart: state.cart,
+    preCommerceRoute: state.preCommerceRoute
   };
 };
 
