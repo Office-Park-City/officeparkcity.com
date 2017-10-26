@@ -279,3 +279,18 @@ html {
     color: #555; }
   .billing__input--city, .billing__input--state, .billing__input--zip {
     padding-left: 10px; }
+
+.nav__container {
+  display: flex; }
+
+.nav__primary {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  justify-content: center; }
+
+.nav__list-item:not(:first-child) {
+  padding-left: 10px; }
+
+.nav__list-item:not(:last-child) {
+  padding-right: 10px; }

@@ -1,0 +1,23 @@
+.nav {
+
+	&__container {
+		display:flex;
+	}
+
+	&__primary {
+		display: flex;
+	    position: absolute;
+	    width: 100%;
+	    justify-content: center;
+	}
+
+	&__list-item {
+
+		&:not(:first-child) {
+			padding-left: 10px;
+		}
+		&:not(:last-child) {
+			padding-right: 10px;
+		}
+	}
+}
