@@ -47,6 +47,7 @@ const Main = ({pathname, history, preCommerceRoute}) => {
       <Route path="/contact" component={Contact}/>
       <Route path="/misc" component={Misc}/>
       <Route path="/cart" render={() => routeComponent[preCommerceRoute]}/>
+      <Route path="/checkout" render={() => routeComponent[preCommerceRoute]}/>
   	</main>
   )
 }
