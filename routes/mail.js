@@ -1,17 +1,20 @@
 const express = require('express');
 const mailRouter = express.Router();
 const emailHelper = require('../helpers/email-helper');
+const awaitRoute = require('../helpers/route-helper').awaitHandlerFactory;
 
 const { addToNewsletter } = emailHelper;
 
-const newsletterSignup = (req, res, next) => {
+const newsletterSignup = async (req, res, next) => {
 
 	const { email, name } = req.body;
 
-	return addToNewsletter(email, name, {}, next);
+	await addToNewsletter(email, name, {});
+
+	return next();
 }
 
-mailRouter.post('/newsletter', newsletterSignup, function (req, res) {
+mailRouter.post('/newsletter', awaitRoute(newsletterSignup), function (req, res) {
 
 	res.json({
 		status: 'succeeded'

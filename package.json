@@ -21,6 +21,7 @@
     "express": "^4.15.4",
     "mailcomposer": "^4.0.2",
     "mailgun-js": "^0.13.1",
-    "stripe": "^4.24.0"
+    "stripe": "^4.24.0",
+    "winston": "^2.4.0"
   }
 }
