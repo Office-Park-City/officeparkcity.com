@@ -44,11 +44,19 @@ const Checkout = ({ pathname }) => {
 		    'Accept': 'application/json, text/plain, */*',
 		    'Content-Type': 'application/json'
 		  }
-		}).then(reponse => reponse.json()).then(json => {
+		}).then(response => {
+			if (!response.ok) {
+				console.log('res: ', response);
+	            throw Error(response.statusText);
+	        }
+		})
+		.then(response => response.json()).then(json => {
 
 			const isSuccess = json.status === 'succeeded';
-		})
 
+			console.log('is success: ', isSuccess);
+
+		}).catch(err => console.log('error: ', err));
 	}
 
 	return (

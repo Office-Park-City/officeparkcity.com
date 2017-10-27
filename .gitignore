@@ -34,3 +34,4 @@ chrome-user-data
 !src/node_modules
 config.js
 public/build
+node.log

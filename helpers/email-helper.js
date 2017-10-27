@@ -1,11 +1,13 @@
 const util = require('util');
 const MAILGUN_API_KEY = require('../config').MAILGUN_API_KEY;
 const mailgun = require('mailgun-js')({apiKey:'key-a61b6ad2a2889c476cd289df3f422209', domain:'officeparkcity.com'});
-const mailcomposer = require('mailcomposer');
 
 module.exports = {
 
   generateHTMLEmail(email, name, cart) {
+
+    global.logger.log('cart: ', cart);
+
     const htmlContent = `
       <p>
       Thanks ${name},<br/><br/>
@@ -19,27 +21,22 @@ module.exports = {
       Gavin</p>
     `;
 
-    return mailcomposer({
+    return emailData = {
       from: 'info@officeparkcity.com',
       to: email,
       subject: 'Thanks for your order!',
       text: 'Thanks for your order.',
       html: htmlContent
-    });
+    };
   },
 
   async sendConfirmationEmail(email, name, cart) {
 
-    const htmlMIME = module.exports.generateHTMLEmail(email, name, cart);
+    const emailData = module.exports.generateHTMLEmail(email, name, cart);
 
-    const message = await util.promisify(htmlMIME.build)()
+    console.log('sending confirm');
 
-    const dataToSend = {
-        to: email,
-        message: message.toString('ascii')
-    };
-
-    return await mailgun.messages().sendMime(dataToSend);
+    return await mailgun.messages().send(emailData);
   },
 
   async addToNewsletter(address, name, vars = {}) {
@@ -48,8 +45,11 @@ module.exports = {
       address,
       name,
       vars,
-      subscribed: true
+      subscribed: true,
+      upsert: 'yes'
     };
+
+    console.log('adding to news');
 
     return await mailgun.lists('newsletter@officeparkcity.com').members().create(member);
   }
